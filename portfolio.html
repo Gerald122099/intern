@@ -7,56 +7,6 @@
     <link rel="stylesheet" href="portfolio.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Style for the modal (hidden by default) */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-        
-        /* Modal content */
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        /* Caption text */
-        .caption {
-            text-align: center;
-            color: #ccc;
-            padding: 10px;
-            height: 150px;
-            font-size: 20px;
-        }
-
-        /* The Close Button */
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -81,53 +31,59 @@
             <div class="portfolio-grid">
                 <!-- Project 1 -->
                 <div class="portfolio-item">
-                    <img src="bottle/front.jpg" alt="Project 1" class="zoom" onclick="openModal(this)">
+                    <img src="front.jpg" alt="Project 1">
                     <h3>Project 1</h3>
-                    <p>The project involves integrating multiple sensors...</p>
+                    <p>The project involves integrating multiple sensors and drives with two ESP32 boards to collect and send real-time data to a centralized website. The website, developed using HTML, CSS, JavaScript, and PHP, displays the data visually, including the locations of multiple bins marked on a Mapbox map with pins indicating their fill status. The ESP32-based IoT devices, programmed in C++, communicate with the website to update the status of each bin, providing accurate location-based information and ensuring efficient monitoring and management. This system aims to enhance data tracking and optimize bin usage through live updates..</p>
                 </div>
                 <!-- Project 2 -->
                 <div class="portfolio-item">
-                    <img src="hayhay.jpg" alt="Project 2" class="zoom" onclick="openModal(this)">
+                    <img src="hayhay.jpg" alt="Project 2">
                     <h3>Project 2</h3>
-                    <p>This project uses an ESP32 board to create a rain-sensing detector...</p>
+                    <p>This project uses an ESP32 board to create a rain-sensing detector integrated with an automatic clothes rack system, designed to protect clothes from rain by automatically retracting or extending the rack. Developed in C++ using the Arduino IDE, the ESP32 processes environmental data in real-time to trigger the system's actions. The mobile app, built with Android Studio using Java and Kotlin, allows users to monitor and control the clothes rack remotely, providing real-time notifications when rain is detected, ensuring users can take prompt action or rely on the system’s automation for protection. This project blends IoT and home automation to offer convenience and security in managing clothes outdoors..</p>
                 </div>
                 <!-- Project 3 -->
                 <div class="portfolio-item">
-                    <img src="coin.jpg" alt="Project 3" class="zoom" onclick="openModal(this)">
+                    <img src="coin.jpg" alt="Project 3">
                     <h3>Project 3</h3>
-                    <p>This project is a coin changer automatic dispensing...</p>
+                    <p>This project is a coin changer automatic dispensing with notification feature via sms api  notifying the owner when the coins is critically low. The project used to develop is Arduino Uno and Esp32 board using C++ programming language  </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal for zooming -->
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption" class="caption"></div>
-    </div>
+    <!-- Graphic Designs Section -->
+    <section id="graphic-designs">
+        <div class="container">
+            <h2>Graphic Designs</h2>
+            <div class="design-grid">
+                <!-- Design 1 -->
+                <div class="design-item">
+                    <img src="logo.png" alt="Design 1">
+                    <img src="concept.jpg" alt="Design 1">
+                    <img src="polo.jpg" alt="Design 1">
+                    <h3>Design 1</h3>
+                    <p>A modern logo design for SK and Poloshirt Design.</p>
+                </div>
+                <!-- Design 2 -->
+                <div class="design-item">
+                    <img src="cons.jpg" alt="Design 2">
+                    <h3>Design 2</h3>
+                    <p>A modern logo for construction and engineering company.</p>
+                </div>
+                <!-- Design 3 -->
+                <div class="design-item">
+                    <img src="design3.jpg" alt="Design 3">
+                    <h3>Design 3</h3>
+                    <p>A branding package for a coffee shop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
             <p>&copy; 2023 Developer X. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        function openModal(img) {
-            var modal = document.getElementById("myModal");
-            var modalImg = document.getElementById("img01");
-            var captionText = document.getElementById("caption");
-            modal.style.display = "block";
-            modalImg.src = img.src;
-            captionText.innerHTML = img.alt;
-        }
-
-        function closeModal() {
-            var modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        }
-    </script>
 </body>
 </html>
