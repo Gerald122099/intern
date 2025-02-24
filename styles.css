@@ -224,3 +224,36 @@ footer p {
     display: block;
     margin: 0 auto;
 }
+
+/* General styling for all images to be responsive */
+img {
+    max-width: 100%;  /* Ensures images scale within their container */
+    height: auto;      /* Maintains aspect ratio */
+    display: block;    /* Removes extra space below images */
+    margin: 0 auto;    /* Centers images horizontally */
+}
+
+/* Profile image specific styling */
+.profile-container img {
+    width: 50%;       /* Adjust as needed */
+    max-width: 300px; /* Prevents it from being too large */
+    border-radius: 50%; /* Optional: makes it circular */
+}
+
+/* Icon images */
+.clickable-image {
+    width: 80%;       /* Makes it flexible while maintaining visibility */
+    max-width: 400px; /* Ensures it doesn't get too big */
+    height: auto;      /* Keeps aspect ratio */
+}
+
+/* Responsive media query for smaller screens */
+@media (max-width: 768px) {
+    .profile-container img {
+        width: 70%; /* Adjusts size for smaller screens */
+    }
+
+    .clickable-image {
+        width: 90%; /* Allows icons to be larger on smaller screens */
+    }
+}
