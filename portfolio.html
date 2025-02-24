@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer X - Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Style for the modal (hidden by default) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        /* Modal content */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption text */
+        .caption {
+            text-align: center;
+            color: #ccc;
+            padding: 10px;
+            height: 150px;
+            font-size: 20px;
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Developer X</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="#graphic-designs">Graphic Designs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item">
+                    <img src="bottle/front.jpg" alt="Project 1" class="zoom" onclick="openModal(this)">
+                    <h3>Project 1</h3>
+                    <p>The project involves integrating multiple sensors...</p>
+                </div>
+                <!-- Project 2 -->
+                <div class="portfolio-item">
+                    <img src="hayhay.jpg" alt="Project 2" class="zoom" onclick="openModal(this)">
+                    <h3>Project 2</h3>
+                    <p>This project uses an ESP32 board to create a rain-sensing detector...</p>
+                </div>
+                <!-- Project 3 -->
+                <div class="portfolio-item">
+                    <img src="coin.jpg" alt="Project 3" class="zoom" onclick="openModal(this)">
+                    <h3>Project 3</h3>
+                    <p>This project is a coin changer automatic dispensing...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for zooming -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption" class="caption"></div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Developer X. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
