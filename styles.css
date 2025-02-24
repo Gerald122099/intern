@@ -243,7 +243,7 @@ img {
 /* Icon images */
 .clickable-image {
     width: 80%;       /* Makes it flexible while maintaining visibility */
-    max-width: 400px; /* Ensures it doesn't get too big */
+    max-width: 700px; /* Ensures it doesn't get too big */
     height: auto;      /* Keeps aspect ratio */
 }
 
