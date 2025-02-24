@@ -3,6 +3,179 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, #3d2146 0%, #928DAB 100%);
+    color: #F1F1F1;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: rgba(25, 25, 25, 0.85);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Larger for emphasis */
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #F1F1F1; /* Light greyish white */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem; /* Slightly larger for readability */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FF4E50;
+}
+
+section {
+    padding: 120px 0;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+section h2 {
+    font-size: 2.25rem; /* Slightly smaller than h1 for hierarchy */
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #FF4E50; /* Vibrant coral red for contrast */
+}
+
+section p {
+    font-size: 1.125rem; /* Slightly larger than base for readability */
+    max-width: 600px;
+    margin: 0 auto 20px;
+    color: #D9D9D9; /* Light grey for readability */
+    text-align: justify; /* Justify the text */
+    line-height: 1.8; /* Increased line height for better readability */
+}
+
+/* Portfolio Grid */
+.portfolio-grid, .design-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.portfolio-item, .design-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover, .design-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
+}
+
+.portfolio-item img, .design-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.portfolio-item h3, .design-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #FF4E50;
+}
+
+.portfolio-item p, .design-item p {
+    font-size: 1rem;
+    color: #D9D9D9;
+    text-align: center;
+}
+
+footer {
+    background: rgba(20, 20, 20, 0.85);
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #B3B3B3;
+}
+
+.full-text {
+    display: none;
+}
+
+.read-more {
+    background-color: #FF4E50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.read-more:hover {
+    background-color: #e43a3c;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .portfolio-grid, .design-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
     background: linear-gradient(135deg, #1F1C2C 0%, #928DAB 100%);
     color: #F1F1F1;
     line-height: 1.6;
@@ -86,6 +259,7 @@ section h2 {
     padding: 20px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: auto; /* Ensure height is auto */
 }
 
 .portfolio-item:hover, .design-item:hover {
@@ -110,17 +284,23 @@ section h2 {
     color: #D9D9D9;
     text-align: center;
 }
-
-footer {
-    background: rgba(20, 20, 20, 0.85);
-    text-align: center;
-    padding: 20px 0;
+/* Read More Button */
+.full-text {
+    display: none;
 }
 
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #B3B3B3;
+.read-more {
+    background-color: #FF4E50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.read-more:hover {
+    background-color: #e43a3c;
 }
 
 /* Responsive Design */
@@ -143,5 +323,10 @@ footer p {
 
     .portfolio-grid, .design-grid {
         grid-template-columns: 1fr;
+    }
+
+    .portfolio-item, .design-item {
+        width: 100%; /* Full width on small screens */
+        height: auto; /* Auto height on small screens */
     }
 }
